@@ -1,0 +1,315 @@
+/* ==========================================================================
+   Skin gaya almai.id — dimuat setelah style.css
+   Hitam #050505, hijau #33e818, Montserrat, grid + glow, judul kapital tebal
+   ========================================================================== */
+
+:root {
+  --accent: #33e818;
+  --bg: #050505;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+}
+
+body { font-size: 16px; background: #050505; }
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #0a0a0a; }
+::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #33e818; }
+
+.t-green { color: #33e818; }
+.t-red { color: #ef4444; }
+.t-white { color: #fff; font-weight: 600; }
+
+/* ---------- Navbar ---------- */
+.almai-nav-pill {
+  background: rgba(0, 0, 0, 0.6);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  padding: 8px 10px 8px 16px;
+}
+.almai-nav-links {
+  display: flex;
+  gap: 32px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.almai-nav-links a { color: #fff; transition: color .2s; }
+.almai-nav-links a:hover,
+.almai-nav-links a.is-active { color: #33e818; }
+.almai-login-btn { border: 0; cursor: pointer; padding: 10px 26px; box-shadow: none; }
+.almai-login-btn:hover { background: #33e818; filter: brightness(1.1); box-shadow: none; }
+
+/* ---------- Hero ---------- */
+.hero2 {
+  height: auto;
+  max-height: none;
+  min-height: 100vh;
+  padding: 104px 0 0;
+  justify-content: flex-start;
+}
+.hero2-bg img { filter: blur(2px) brightness(0.45) saturate(0.6) hue-rotate(40deg); }
+.hero2-bg::after {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    linear-gradient(to bottom, transparent 70%, #050505 100%);
+}
+.almai-grid {
+  position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background-size: 40px 40px;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  -webkit-mask-image: linear-gradient(to bottom, #000 40%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 40%, transparent 100%);
+}
+.almai-glow {
+  position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: 800px; max-width: 100%; height: 500px; border-radius: 50%;
+  background: rgba(51, 232, 24, 0.2); filter: blur(120px);
+  z-index: 1; pointer-events: none;
+}
+.hero2 .wrap { flex: 1; display: flex; flex-direction: column; align-items: center; }
+
+.hero-badge {
+  display: inline-block;
+  padding: 8px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: #4ade80;
+  border: 1px solid #22c55e;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  margin-bottom: 4px;
+}
+
+.hero2-stage { height: clamp(220px, 32vh, 340px); }
+.hero2-copy { margin-top: -10px; }
+
+.almai-h1 {
+  text-transform: uppercase;
+  font-weight: 900 !important;
+  line-height: 1.12 !important;
+  letter-spacing: -0.025em !important;
+  max-width: 1150px !important;
+  margin-bottom: 18px !important;
+}
+.almai-h1 span { display: block; font-size: clamp(1.375rem, 4.2vw, 3.6rem); }
+.almai-h1 .l-white { color: #fff; }
+.almai-h1 .l-green { color: #33e818; }
+
+.hero2 .lead {
+  color: var(--gray-400);
+  font-weight: 500;
+  font-size: clamp(13px, 1.3vw, 18px);
+  max-width: 820px;
+  line-height: 1.65;
+}
+.hero2 .lead b { color: #fff; font-weight: 600; }
+
+/* Tombol gaya almai.id (rounded-xl) */
+.hero-ctas {
+  display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;
+  margin: 28px 0 22px;
+}
+.almai-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 16px 28px;
+  border-radius: 12px;
+  font-family: var(--font-head);
+  font-size: 14px; font-weight: 700;
+  cursor: pointer; border: 1px solid transparent;
+  transition: all .25s;
+  white-space: nowrap;
+}
+.almai-btn-solid { background: #33e818; color: #000; }
+.almai-btn-solid:hover { filter: brightness(1.1); }
+.almai-btn-soft {
+  background: rgba(51, 232, 24, 0.1); color: #33e818;
+  border-color: rgba(51, 232, 24, 0.2);
+}
+.almai-btn-soft:hover { background: #33e818; color: #000; }
+
+/* Social proof: audiens + testimoni */
+.proof-row { display: flex; align-items: center; justify-content: center; gap: 24px; flex-wrap: wrap; }
+.almai-total-audiens-card { padding: 10px 20px 10px 10px; }
+.testi-pill {
+  display: flex; flex-direction: column; justify-content: center;
+  width: 290px; height: 76px; padding: 10px 30px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px; text-align: left;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+}
+.testi-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px; }
+.testi-name { font-size: 10px; font-weight: 700; color: #fff; transition: opacity .4s; }
+.testi-stars { font-size: 7px; color: #eab308; display: flex; gap: 2px; }
+.testi-text { font-size: 10px; font-style: italic; color: var(--gray-400); line-height: 1.35; transition: opacity .4s; }
+.almai-user-toast { margin-top: 10px; }
+
+/* Marquee logo */
+.almai-marquee {
+  position: relative; z-index: 2;
+  margin-top: 36px;
+  padding: 14px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  overflow: hidden;
+}
+.marquee-track { display: flex; width: max-content; animation: almaiMarquee 35s linear infinite; }
+.marquee-content { display: flex; align-items: center; gap: 64px; padding-right: 64px; }
+.marquee-content img {
+  height: 32px; width: auto; object-fit: contain;
+  filter: grayscale(1) brightness(0) invert(1); opacity: .5;
+  transition: opacity .3s;
+}
+.marquee-content img:hover { opacity: 1; }
+@keyframes almaiMarquee { to { transform: translateX(-50%); } }
+
+/* ---------- Section umum ---------- */
+.almai-section { position: relative; padding: 64px 0; overflow: hidden; }
+.sec-dark { background: #0a0a0a; border-top: 1px solid rgba(255, 255, 255, 0.05); }
+.sec-black { background: #000; }
+.sec-wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.sec-wrap.narrow { max-width: 900px; }
+.sec-head { text-align: center; max-width: 820px; margin: 0 auto 32px; }
+.sec-tag {
+  font-size: 14px; font-weight: 600; letter-spacing: 0.1em;
+  text-transform: uppercase; color: #33e818; margin-bottom: 12px;
+}
+.sec-tag.tag-red { color: #ef4444; }
+.sec-title {
+  font-size: clamp(1.875rem, 4vw, 3rem);
+  font-weight: 900; text-transform: uppercase; letter-spacing: -0.025em;
+  color: #fff; margin-bottom: 22px;
+}
+.sec-quote {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 700; line-height: 1.35; color: #fff; margin-bottom: 20px;
+}
+.sec-desc { color: var(--gray-400); font-size: clamp(14px, 1.2vw, 17px); line-height: 1.7; }
+
+.glow-divider {
+  width: 100px; height: 4px; margin: 20px auto 24px;
+  border: 0; border-radius: 999px; background: #22c55e;
+  box-shadow: 0 0 10px #22c55e, 0 0 20px rgba(34, 197, 94, 0.8);
+}
+
+/* Kotak hijau (seperti "The First Trading Protection Ecosystem") */
+.green-box {
+  max-width: 760px; margin: 0 auto;
+  padding: 28px 24px;
+  border-radius: 24px;
+  border: 1px solid rgba(51, 232, 24, 0.2);
+  background: linear-gradient(135deg, rgba(20, 83, 45, 0.2), #000);
+  text-align: center;
+}
+.green-box h3 { font-size: clamp(1.25rem, 2.2vw, 1.5rem); font-weight: 900; color: #fff; line-height: 1.25; }
+.green-box p { color: var(--gray-300); font-size: 15px; line-height: 1.7; margin-bottom: 14px; }
+.green-box p.strong { font-weight: 600; }
+.text-link { color: #33e818; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; }
+.text-link:hover { text-decoration: underline; }
+
+/* Kartu value */
+.value-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+}
+.value-card {
+  background: #0f0f0f;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
+  padding: 26px 22px;
+  display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px;
+  cursor: pointer;
+  transition: all .5s;
+}
+.value-card:hover {
+  border-color: rgba(51, 232, 24, 0.3);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+.value-icon {
+  width: 48px; height: 48px; border-radius: 50%;
+  background: rgba(51, 232, 24, 0.1); color: #33e818;
+  display: flex; align-items: center; justify-content: center; font-size: 20px;
+  transition: transform .5s;
+}
+.value-card:hover .value-icon { transform: scale(1.1); }
+.value-card h3 { font-size: 17px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.05em; color: #fff; }
+.value-card p { font-size: 14px; color: var(--gray-500); line-height: 1.6; transition: color .3s; }
+.value-card:hover p { color: var(--gray-300); }
+
+/* Kartu event */
+.event-card {
+  display: grid; grid-template-columns: 1fr 1.1fr;
+  background: #0f0f0f;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 24px; overflow: hidden;
+  max-width: 980px; margin: 0 auto;
+  transition: border-color .4s;
+}
+.event-card:hover { border-color: rgba(51, 232, 24, 0.3); }
+.event-media { position: relative; min-height: 280px; }
+.event-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.event-chip {
+  position: absolute; top: 16px; left: 16px;
+  background: #33e818; color: #000;
+  font-size: 11px; font-weight: 800; letter-spacing: 0.08em;
+  padding: 6px 12px; border-radius: 999px;
+}
+.event-body { padding: 28px; display: flex; flex-direction: column; gap: 16px; }
+.event-body h3 { font-size: 22px; font-weight: 900; color: #fff; line-height: 1.25; }
+.event-mentor { font-size: 13px; color: var(--gray-400); }
+.event-mentor i { color: #33e818; margin-right: 6px; }
+.event-meta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.event-meta div {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px; padding: 10px 12px;
+}
+.event-meta span { display: block; font-size: 9px; font-weight: 700; letter-spacing: 0.12em; color: var(--gray-500); }
+.event-meta b { font-size: 13px; color: #fff; }
+.event-meta b.t-green { color: #33e818; }
+.event-list { list-style: none; display: grid; gap: 6px; font-size: 14px; color: var(--gray-300); }
+.event-list i { color: #33e818; margin-right: 8px; }
+.event-foot { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-top: auto; }
+.event-price span { display: block; font-size: 11px; color: var(--gray-500); }
+.event-price b { font-size: 24px; font-weight: 900; color: #33e818; }
+
+/* Footer */
+.almai-footer { background: #000; border-top: 1px solid rgba(255, 255, 255, 0.05); padding: 28px 0; }
+.foot-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.foot-note { font-size: 12px; color: var(--gray-500); }
+
+/* Modal pendaftaran */
+.modal-card { border-radius: 24px; background: #0f0f0f; border: 1px solid rgba(51, 232, 24, 0.2); }
+.form-input { border-radius: 12px; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .almai-nav-links { display: none; }
+  .value-grid { grid-template-columns: repeat(2, 1fr); }
+  .event-card { grid-template-columns: 1fr; }
+  .event-media { min-height: 200px; }
+}
+@media (max-width: 640px) {
+  .hero2 { padding-top: 92px; }
+  .hero-badge { font-size: 11px; padding: 6px 14px; order: 0; margin-bottom: 14px; }
+  .hero2 h1.almai-h1 { font-size: inherit; max-width: 100% !important; }
+  .almai-h1 span { font-size: clamp(20px, 6.2vw, 30px); }
+  .hero-ctas { order: 5; flex-direction: column; gap: 8px; width: 100%; padding: 0 8px; margin: 18px 0 16px; }
+  .hero2 .almai-proof-wrap { order: 6; }
+  .almai-btn { width: 100%; padding: 13px 20px; }
+  .testi-pill { display: none; }
+  .value-grid { grid-template-columns: 1fr; }
+  .event-meta { grid-template-columns: 1fr 1fr; }
+  .almai-section { padding: 48px 0; }
+  .marquee-content { gap: 40px; padding-right: 40px; }
+  .marquee-content img { height: 24px; }
+}
